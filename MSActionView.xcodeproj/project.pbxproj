@@ -16,6 +16,7 @@
 		D7CC08741CDBA33400819A6F /* MSActionViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC08731CDBA33400819A6F /* MSActionViewTests.m */; };
 		D7CC087F1CDBA33400819A6F /* MSActionViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC087E1CDBA33400819A6F /* MSActionViewUITests.m */; };
 		D7CC088F1CDBA36200819A6F /* MSActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CC088E1CDBA36200819A6F /* MSActionView.m */; };
+		D7ECC6AC1CDBBA2900337234 /* MSActionTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D7ECC6AB1CDBBA2900337234 /* MSActionTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,8 @@
 		D7CC088D1CDBA36200819A6F /* MSActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSActionView.h; path = MSActionView/MSActionView.h; sourceTree = "<group>"; };
 		D7CC088E1CDBA36200819A6F /* MSActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSActionView.m; path = MSActionView/MSActionView.m; sourceTree = "<group>"; };
 		D7ECC6A91CDBA53300337234 /* MSActionViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MSActionViewHeader.h; path = MSActionView/MSActionViewHeader.h; sourceTree = "<group>"; };
+		D7ECC6AA1CDBBA2900337234 /* MSActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSActionTableViewCell.h; path = MSActionView/MSActionTableViewCell.h; sourceTree = "<group>"; };
+		D7ECC6AB1CDBBA2900337234 /* MSActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSActionTableViewCell.m; path = MSActionView/MSActionTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +154,8 @@
 				D7CC088D1CDBA36200819A6F /* MSActionView.h */,
 				D7CC088E1CDBA36200819A6F /* MSActionView.m */,
 				D7ECC6A91CDBA53300337234 /* MSActionViewHeader.h */,
+				D7ECC6AA1CDBBA2900337234 /* MSActionTableViewCell.h */,
+				D7ECC6AB1CDBBA2900337234 /* MSActionTableViewCell.m */,
 			);
 			name = MSActionView;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				D7CC08611CDBA33400819A6F /* ViewController.m in Sources */,
 				D7CC085E1CDBA33400819A6F /* AppDelegate.m in Sources */,
 				D7CC088F1CDBA36200819A6F /* MSActionView.m in Sources */,
+				D7ECC6AC1CDBBA2900337234 /* MSActionTableViewCell.m in Sources */,
 				D7CC085B1CDBA33400819A6F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

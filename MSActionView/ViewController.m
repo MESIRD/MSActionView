@@ -18,6 +18,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    UIButton *button = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    button.frame = CGRectMake(100, 100, 100, 100);
+    [button addTarget:self action:@selector(display) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:button];
+}
+
+- (void)display {
+    
+    MSActionView *actionView = [[MSActionView alloc] initWithTitle:@"ActionViewTitle" cancelButtonTitle:@"Cancel" andOtherButtonTitles:@[@"OptionA", @"OptionB"]];
+    [actionView show];
 }
 
 - (void)didReceiveMemoryWarning {
