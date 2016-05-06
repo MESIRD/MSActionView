@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "MSActionView/MSActionViewHeader.h"
 
-@interface ViewController ()
+@interface ViewController () <MSActionViewDelegate>
 
 @end
 
@@ -27,8 +27,49 @@
 
 - (void)display {
     
-    MSActionView *actionView = [[MSActionView alloc] initWithTitle:@"ActionViewTitle" cancelButtonTitle:@"Cancel" andOtherButtonTitles:@[@"OptionA", @"OptionB"]];
+    MSActionView *actionView;
+    
+    // 1. using delegate to implement tap action
+    actionView = [self configActionViewWithDelegate];
+    
+    // 2. using blocks to implement tap action
+//    actionView = [self configActionViewWithBlock];
+    
     [actionView show];
+}
+
+- (MSActionView *)configActionViewWithDelegate {
+    
+    MSActionView *actionView = [[MSActionView alloc] initWithTitle:@"ActionViewTitle" cancelButtonTitle:@"Cancel" andOtherButtonTitles:@[@"OptionA", @"OptionB"]];
+    actionView.delegate = self;
+    return actionView;
+}
+
+- (MSActionView *)configActionViewWithBlock {
+    
+    MSActionView *actionView = [[MSActionView alloc] initWithTitle:@"Action View Title" cancelButtonTitle:nil andOtherButtonTitles:nil];
+    [actionView addButtonWithTitle:@"OptionA" andTapActionBlock:^{
+        NSLog(@"This is optionA!");
+    }];
+    [actionView addButtonWithTitle:@"OptionB" andTapActionBlock:^{
+        NSLog(@"This is optionB!");
+    }];
+    return actionView;
+}
+
+- (void)optionSelected:(NSDictionary *)userInfo {
+    
+    NSUInteger index = [userInfo[@"index"] unsignedIntegerValue];
+    switch (index) {
+        case 0:
+            NSLog(@"AAAA");
+            break;
+        case 1:
+            NSLog(@"BBBB");
+            break;
+        default:
+            break;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
