@@ -10,16 +10,30 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void (^TapActionBlock)(void);
+
+
+
 @protocol MSActionViewDelegate <NSObject>
 
 @optional
+
+/*
+ *  userInfo contains three keys
+ *
+ *  MSOptionUserInfoTarget : the instance of action view itself
+ *  MSOptionUserInfoIndex  : the selected option index
+ *  MSOptionUserInfoTitle  : the selected option title
+ */
 - (void)optionSelected:(NSDictionary *)userInfo;
 
 @end
 
 @interface MSActionView : UIView
 
-typedef void (^TapActionBlock)(void);
+extern NSString * const MSOptionUserInfoTarget;
+extern NSString * const MSOptionUserInfoIndex;
+extern NSString * const MSOptionUserInfoTitle;
 
 @property (nonatomic, weak) id<MSActionViewDelegate> delegate;
 

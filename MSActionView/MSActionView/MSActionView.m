@@ -35,9 +35,12 @@ static NSString *const kReusableIdentifier = @"Action Table Vieww Cell";
 
 static const CGFloat kTitleHeaderHeight  = 30.0f;
 static const CGFloat kNormalHeaderHeight = 10.0f;
-//static const CGFloat kNoHeaderHeight     = 0.0f;
 static const CGFloat kOptionHeight       = 45.0f;
 static const NSTimeInterval kSlideTime   = 0.3f;
+
+NSString * const MSOptionUserInfoTarget  = @"target";
+NSString * const MSOptionUserInfoIndex   = @"index";
+NSString * const MSOptionUserInfoTitle   = @"title";
 
 
 - (instancetype)initWithTitle:(NSString *)title cancelButtonTitle:(NSString *)cancelButtonTitle andOtherButtonTitles:(NSArray *)otherButtonTitles {
@@ -265,7 +268,7 @@ static const NSTimeInterval kSlideTime   = 0.3f;
         } else if ( otherButtonsSectionIndex == indexPath.section) {
             //other button pressed
             if ( [self.delegate respondsToSelector:@selector(optionSelected:)]) {
-                [self.delegate performSelector:@selector(optionSelected:) withObject:@{@"index":[NSNumber numberWithUnsignedInteger:indexPath.row], @"title":_otherButtonTitles[indexPath.row]}];
+                [self.delegate performSelector:@selector(optionSelected:) withObject:@{MSOptionUserInfoTarget:self, MSOptionUserInfoIndex:[NSNumber numberWithUnsignedInteger:indexPath.row], MSOptionUserInfoTitle:_otherButtonTitles[indexPath.row]}];
             }
             NSLog(@"Button at index(%ld) is pressed", indexPath.row);
         }
