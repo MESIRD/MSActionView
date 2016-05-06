@@ -59,7 +59,7 @@
 
 - (void)optionSelected:(NSDictionary *)userInfo {
     
-    NSUInteger index = [userInfo[@"index"] unsignedIntegerValue];
+    NSUInteger index = [userInfo[MSOptionUserInfoIndex] unsignedIntegerValue];
     switch (index) {
         case 0:
             NSLog(@"AAAA");
