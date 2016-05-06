@@ -85,6 +85,7 @@ static const NSTimeInterval kSlideTime   = 0.3f;
     // config mask layer
     _maskView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, _contentView.frame.size.width, _contentView.frame.size.height)];
     _maskView.backgroundColor = [UIColor colorWithWhite:0.0f alpha:0.5f];
+    _maskView.layer.opacity = 0.0f;
     [_contentView addSubview:_maskView];
     // add tap gesture recognizer to mask layer
     UITapGestureRecognizer *hideGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hide)];
@@ -168,6 +169,7 @@ static const NSTimeInterval kSlideTime   = 0.3f;
     [currentWindow addSubview:self];
     
     [UIView animateWithDuration:kSlideTime animations:^{
+        _maskView.layer.opacity = 1.0f;
         _actionTableView.frame = CGRectMake( _actionTableView.frame.origin.x, SCREEN_HEIGHT - _actionTableView.frame.size.height, _actionTableView.frame.size.width, _actionTableView.frame.size.height);
     } completion:^(BOOL finished) {
         NSLog(@"Action View Slide In Complete.");
@@ -178,6 +180,7 @@ static const NSTimeInterval kSlideTime   = 0.3f;
     
     [UIView animateWithDuration:kSlideTime animations:^{
         _actionTableView.frame = CGRectMake( _actionTableView.frame.origin.x, SCREEN_HEIGHT, _actionTableView.frame.size.width, _actionTableView.frame.size.height);
+        _maskView.layer.opacity = 0.0f;
     } completion:^(BOOL finished) {
         [self removeFromSuperview];
         NSLog(@"Action View Slide Out Complete.");
@@ -259,7 +262,6 @@ static const NSTimeInterval kSlideTime   = 0.3f;
     if ( self.delegate) {
         if ( cancelButtonSectionIndex == indexPath.section && indexPath.row == 0) {
             //cancel button pressed
-            [self hide];
         } else if ( otherButtonsSectionIndex == indexPath.section) {
             //other button pressed
             if ( [self.delegate respondsToSelector:@selector(optionSelected:)]) {
