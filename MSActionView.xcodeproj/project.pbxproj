@@ -58,7 +58,7 @@
 		D7ECC6A91CDBA53300337234 /* MSActionViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MSActionViewHeader.h; path = MSActionView/MSActionViewHeader.h; sourceTree = "<group>"; };
 		D7ECC6AA1CDBBA2900337234 /* MSActionTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MSActionTableViewCell.h; path = MSActionView/MSActionTableViewCell.h; sourceTree = "<group>"; };
 		D7ECC6AB1CDBBA2900337234 /* MSActionTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MSActionTableViewCell.m; path = MSActionView/MSActionTableViewCell.m; sourceTree = "<group>"; };
-		F52D105C1CDC2B1D0033209D /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PrefixHeader.pch; path = MSActionView/PrefixHeader.pch; sourceTree = "<group>"; };
+		F52D109C1CDC70460033209D /* MSActionViewPrefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MSActionViewPrefix.pch; path = MSActionView/MSActionViewPrefix.pch; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,7 +157,7 @@
 				D7ECC6A91CDBA53300337234 /* MSActionViewHeader.h */,
 				D7ECC6AA1CDBBA2900337234 /* MSActionTableViewCell.h */,
 				D7ECC6AB1CDBBA2900337234 /* MSActionTableViewCell.m */,
-				F52D105C1CDC2B1D0033209D /* PrefixHeader.pch */,
+				F52D109C1CDC70460033209D /* MSActionViewPrefix.pch */,
 			);
 			name = MSActionView;
 			sourceTree = "<group>";

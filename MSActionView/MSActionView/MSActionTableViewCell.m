@@ -9,7 +9,7 @@
 
 
 #import "MSActionTableViewCell.h"
-#import "PrefixHeader.pch"
+#import "MSActionViewPrefix.pch"
 
 @implementation MSActionTableViewCell
 
