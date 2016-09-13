@@ -230,12 +230,12 @@ NSString * const MSOptionUserInfoTitle   = @"title";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     
-    if ( _otherButtonTitles.count > 0) {
-        return otherButtonsSectionIndex == section ? kTitleHeaderHeight : kNormalHeaderHeight;
-    } else if ( hasCancelButton) {
-        return kTitleHeaderHeight;
+    if (otherButtonsSectionIndex == section) {
+        return _title.length > 0 ? kTitleHeaderHeight : 0;
+    } else if (cancelButtonSectionIndex == section) {
+        return _otherButtonTitles.count == 0 && _title.length > 0 ? kTitleHeaderHeight : kNormalHeaderHeight;
     }
-    return kTitleHeaderHeight;
+    return 0;
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
